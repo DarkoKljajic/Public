@@ -27,4 +27,4 @@ switch ($Number) {
     Default {$Group=""}
 }
 Get-WindowsAutopilotInfo -OutputFile AutopilotHWID.csv -GroupTag $Group
-WWrite-Host "Complete"
+Write-Host "Complete"
