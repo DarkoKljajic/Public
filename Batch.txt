@@ -18,7 +18,7 @@ Write-Host "
 2 (EMEA)
 3 (LATAM)
 4 (APAC)"
-$Number = Read-Host -Promtp "Please Choose Number:"
+$Number = Read-Host -Prompt "Please Choose Number:"
 switch ($Number) {
     1 {$Group="ZTD-AP-NA-CORP"}
     2 {$Group="ZDT-AP-EMEA-CORP"}
@@ -27,3 +27,4 @@ switch ($Number) {
     Default {$Group=""}
 }
 Get-WindowsAutopilotInfo -OutputFile AutopilotHWID.csv -GroupTag $Group
+WWrite-Host "Complete"
