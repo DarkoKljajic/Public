@@ -13,4 +13,17 @@ New-Item -Type Directory -Path "C:\HWID"
 Set-Location -Path "C:\HWID"
 $env:Path += ";C:\Program Files\WindowsPowerShell\Scripts"
 Install-Script -Name Get-WindowsAutopilotInfo -Force
-Get-WindowsAutopilotInfo -OutputFile AutopilotHWID.csv
+Write-Host "
+1 (NA)
+2 (EMEA)
+3 (LATAM)
+4 (APAC)"
+$Number = Read-Host -Promtp "Please Choose Number:"
+switch ($Number) {
+    1 {$Group="ZTD-AP-NA-CORP"}
+    2 {$Group="ZDT-AP-EMEA-CORP"}
+    3 {$Group="ZTD-AP-LATAM-CORP"}
+    4 {$Group="ZTD-AP-APAC-CORP"}
+    Default {$Group=""}
+}
+Get-WindowsAutopilotInfo -OutputFile AutopilotHWID.csv -GroupTag $Group
